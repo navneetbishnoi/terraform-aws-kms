@@ -2,15 +2,14 @@
 ## Labels module callled that will be used for naming and tags.
 ##----------------------------------------------------------------------------------
 module "labels" {
-  source      = "git::https://github.com/navneetbishnoi/terraform-aws-labels.git?ref=v1.0.0"
+  source      = "../terraform-aws-labels"
   name        = var.name
-  environment = var.environment
   repository  = var.repository
+  environment = var.environment
+  managedby   = var.managedby
   label_order = var.label_order
-  attributes  = ["v2"]
-
   extra_tags = {
-    Owner      = "Sohan"
+    Owner      = "navneetbishnoi"
     CostCenter = "Finance"
   }
 }
